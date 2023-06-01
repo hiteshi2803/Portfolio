@@ -84,7 +84,7 @@ nav ul li a:hover::after{
     flex-basis: 35%;
 }
 .about-col-1 img{
-    width: 100%;
+    width: 70%;
     border-radius: 15px;
 }
 .about-col-2{
@@ -171,10 +171,6 @@ nav ul li a:hover::after{
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
-}
-.services-list div:hover{
-    background: #ff0040;
-    transform: translateY(-10px);
 }
 
 /*--------------------projects---------------------*/
@@ -304,4 +300,9 @@ form .btn2{
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
+}
+#msg{
+    color: #bbdea3;
+    margin-top: -40px;
+    display: block;
 }

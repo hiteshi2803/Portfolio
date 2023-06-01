@@ -22,7 +22,6 @@
             </ul>
         </nav>
         <div class="header-text">
-            <p>Computer Science Engineering Student</p>
             <h1>Hi, I'm <span>Hiteshi Dattatrey</span><br>from Delhi,India</h1>
         </div>
     </div>
@@ -32,11 +31,11 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="images/user.png">
+                <img src="images/user (2).png">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <p>An enthusiast exploring new domains. Love developing new skills and learning something new each day.</p>
+                <p>A pre-final year B.Tech CSE student exploring new domains and developing new skills.</p>
         
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -46,13 +45,15 @@
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>Languages</span><br>C,C++,Python</li>
-                        <li><span>Web Development</span><br>Building Website</li>
-                        <li><span>Game Development</span><br>Building Unity games</li>
+                        <li><span>Web Development</span><br>HTML,CSS</li>
+                        <li><span>Game Development</span><br>Unity,C#</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="experience">
                     <ul>
-                        <li><span>2022-Current</span><br>Research and Promotions Internship at Evepaper</li>
+                        <li><span>2022-2022</span><br>Google Cloud Ready Facilitator</li>
+                        <li><span>2022-2023</span><br>Research and Promotions Internship at Evepaper</li>
+                        <li><span>2023-Current</span><br>Web Development Internship at NoQs Digital Pvt. Ltd.</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="education">
@@ -73,20 +74,12 @@
             <div>
                 <i class="fa-solid fa-code"></i>
                 <h2>Web Development</h2>
-                <p>I create, build, and maintain websites using HTML, CSS and Javascript</p>
-                <a href="#">Learn more</a>
+                <p>Creating, building, and maintaining websites using HTML, CSS, Bootstrap and Javascript</p>
             </div>
             <div>
                 <i class="fa-solid fa-gamepad"></i>
                 <h2>Game Development</h2>
-                <p>I develop and design a game using Unity and love to host it on an online platform</p>
-                <a href="#">Learn more</a>
-            </div>
-            <div>
-                <i class="fa-solid fa-crop-simple"></i>
-                <h2>Logo Designing</h2>
-                <p>I value simple content structure, clean design patterns, and thoughtful interactions.</p>
-                <a href="#">Learn more</a>
+                <p>Dveloping and designing games using Unity and hosting them on an online platform</p>
             </div>
         </div>
     </div>
@@ -102,7 +95,6 @@
                 <div class="layer">
                     <h3>Campus of Secrets Game</h3>
                     <p>A Treasure hunt game using Unity based on AR with treasure boxes spawning on specific images and displaying questions to be answered to move forward.</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="project">
@@ -110,7 +102,7 @@
                 <div class="layer">
                     <h3>Minion Odyssey Game</h3>
                     <p>An infine runner game using Unity with obstacles to dodge and coins to collect on the way to increase score</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://hiteshi01.itch.io/minion-odyssey"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="project">
@@ -118,7 +110,7 @@
                 <div class="layer">
                     <h3>Ice Cream Parlor Management System</h3>
                     <p>Use of Python to automate the process of Ice Cream Parlor Management</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <a href="https://github.com/hiteshi2803/Ice-Cream-Parlor"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="project">
@@ -126,7 +118,6 @@
                 <div class="layer">
                     <h3>Stock Price Prediction</h3>
                     <p>Predicting the future value of a stock traded or exchanged using Data Science, Machine Learning, Deep Learning and Python</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="project">
@@ -134,7 +125,6 @@
                 <div class="layer">
                     <h3>Text Generation with RNN</h3>
                     <p>Training a model to solve sequence prediction problems using Python, Tensorflow, Machine Learning and Data Science</p>
-                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
@@ -156,12 +146,13 @@
                 <a href="images/Myresume.pdf" download class="btn btn2"> Download Resume </a>
             </div>
             <div class="contact-right">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </div>
@@ -186,5 +177,23 @@
     }
 
 </script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyYNPgVmtP7EBXVXN-GOqoxRZo3jtk8vsjz0wGCuqGsn31gu44T9yekPQq2xhGR2qQZ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = " Response submitted. Thank you for contacting !"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 </html>
